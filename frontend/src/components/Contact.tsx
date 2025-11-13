@@ -35,8 +35,12 @@ export default function Contact() {
       formDataObj.append('name', formData.name);
       formDataObj.append('email', formData.email);
       formDataObj.append('message', formData.message);
+      // Add FormSubmit parameters for proper JSON response
+      formDataObj.append('_subject', `Portfolio Contact from ${formData.name}`);
+      formDataObj.append('_captcha', 'false');
+      formDataObj.append('_template', 'box');
 
-      const response = await fetch('https://formsubmit.co/ntrief@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/ntrief@gmail.com', {
         method: 'POST',
         body: formDataObj,
         headers: {
@@ -52,7 +56,7 @@ export default function Contact() {
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(result.message || 'Failed to send message');
       }
     } catch (error) {
       console.error('Form submission error:', error);
