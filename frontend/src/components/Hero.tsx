@@ -58,6 +58,7 @@ export default function Hero() {
                 src={`${import.meta.env.BASE_URL}assets/IMG_3024.JPG`}
                 alt="Nathaniel Trief"
                 className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background shadow-2xl"
+                style={{ objectPosition: 'center 20%' }}
                 onError={(e) => {
                   // Fallback to a placeholder if image doesn't exist
                   e.currentTarget.src = `https://ui-avatars.com/api/?name=Nathaniel+Trief&size=200&background=random`;

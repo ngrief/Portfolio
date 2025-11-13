@@ -16,7 +16,7 @@ export default function Projects() {
       technologies: ['Python', 'Pandas', 'PostgreSQL', 'ETL', 'Database Design'],
       github: 'https://github.com/ngrief/Crowdfunding_ETL',
       demo: '',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/VotesbyParty.png`
     },
     {
       id: '2',
@@ -25,7 +25,7 @@ export default function Projects() {
       technologies: ['JavaScript', 'Chart.js', 'Leaflet.js', 'MongoDB', 'HTML/CSS'],
       github: 'https://github.com/ngrief/data-class-project-3',
       demo: 'https://ngrief.github.io/data-class-project-3/index.html',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/seasonality.png`
     },
     {
       id: '3',
@@ -34,7 +34,7 @@ export default function Projects() {
       technologies: ['Python', 'Pandas', 'Matplotlib', 'SciPy', 'Statistical Analysis'],
       github: 'https://github.com/ngrief/data-class-project1',
       demo: '',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/Alabama dash.png`
     },
     {
       id: '4',
@@ -43,7 +43,7 @@ export default function Projects() {
       technologies: ['JavaScript', 'D3.js', 'HTML5', 'CSS3', 'JSON'],
       github: 'https://github.com/ngrief/belly-button-challenge',
       demo: 'https://ngrief.github.io/belly-button-challenge/',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/Bio.png`
     },
     {
       id: '5',
@@ -52,7 +52,7 @@ export default function Projects() {
       technologies: ['Python', 'TensorFlow', 'Keras', 'Deep Learning', 'Neural Networks'],
       github: 'https://github.com/ngrief/deep-learning-challenge',
       demo: '',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/Uber dash.png`
     },
     {
       id: '6',
@@ -61,17 +61,11 @@ export default function Projects() {
       technologies: ['Tableau', 'Python', 'Pandas', 'Data Visualization', 'BI'],
       github: 'https://github.com/ngrief/CitiBike',
       demo: 'https://public.tableau.com/views/BikeDataProject_17394900320310/Story1',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/Tab.png`
     }
   ];
 
   const projects = backendProjects.length > 0 ? backendProjects : fallbackProjects;
-
-  const projectImages = [
-    `${import.meta.env.BASE_URL}assets/generated/project-demo-1.dim_800x600.jpg`,
-    `${import.meta.env.BASE_URL}assets/generated/project-demo-2.dim_400x800.jpg`,
-    `${import.meta.env.BASE_URL}assets/generated/project-demo-3.dim_800x600.jpg`
-  ];
 
   if (isLoadingProjects) {
     return (
@@ -112,7 +106,7 @@ export default function Projects() {
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden bg-muted">
                   <img
-                    src={projectImages[index % projectImages.length]}
+                    src={project.image || `https://placehold.co/800x600/1a1a1a/white?text=${encodeURIComponent(project.title)}`}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
