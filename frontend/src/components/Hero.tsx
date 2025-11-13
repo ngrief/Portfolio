@@ -46,9 +46,13 @@ export default function Hero() {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
             <div className="relative">
               <img
-                src="/assets/IMG_3024.JPG"
+                src={`${import.meta.env.BASE_URL}assets/IMG_3024.JPG`}
                 alt="Nathaniel Trief"
                 className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background shadow-2xl"
+                onError={(e) => {
+                  // Fallback to a placeholder if image doesn't exist
+                  e.currentTarget.src = `https://ui-avatars.com/api/?name=Nathaniel+Trief&size=200&background=random`;
+                }}
               />
             </div>
           </div>
