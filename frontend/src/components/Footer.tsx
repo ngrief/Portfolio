@@ -6,7 +6,16 @@ import { Separator } from '@/components/ui/separator';
 import { useBackendData } from '@/hooks/useQueries';
 
 export default function Footer() {
-  const { socialLinks } = useBackendData();
+  const { socialLinks: backendSocialLinks } = useBackendData();
+
+  // Fallback social links
+  const defaultSocialLinks = [
+    ['linkedin', 'https://www.linkedin.com/in/nathaniel-trief-492a70b/'],
+    ['github', 'https://github.com/ngrief'],
+    ['email', 'mailto:ntrief@gmail.com']
+  ];
+
+  const socialLinks = backendSocialLinks.length > 0 ? backendSocialLinks : defaultSocialLinks;
   const currentYear = new Date().getFullYear();
   const lastUpdated = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
@@ -41,7 +50,7 @@ export default function Footer() {
                 Nathaniel Trief
               </h3>
               <p className="text-muted-foreground">
-                Full Stack Developer crafting beautiful web experiences with modern technologies.
+                Equity Investment Manager | AI Red Team Specialist | Data & Quantitative Analyst
               </p>
             </div>
 

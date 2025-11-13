@@ -1,22 +1,27 @@
-import { Code2, Palette, Rocket } from 'lucide-react';
+import { Brain, TrendingUp, Database, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function About() {
   const highlights = [
     {
-      icon: Code2,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable code following best practices and modern standards.'
+      icon: Brain,
+      title: 'AI Red Teaming',
+      description: 'Red teaming frontier AI models for logical reasoning and financial program robustness, ensuring models fail at defined thresholds.'
     },
     {
-      icon: Palette,
-      title: 'Design Focus',
-      description: 'Creating intuitive interfaces with attention to detail and user experience.'
+      icon: TrendingUp,
+      title: 'Investment Management',
+      description: 'Managing $6M+ in investment funds with expertise in quantitative trading, derivatives, and risk modeling.'
     },
     {
-      icon: Rocket,
-      title: 'Performance',
-      description: 'Building fast, optimized applications that deliver exceptional user experiences.'
+      icon: Database,
+      title: 'Data Science',
+      description: 'Advanced analytics, machine learning, and data visualization using Python, SQL, and modern BI tools.'
+    },
+    {
+      icon: Award,
+      title: 'Certified Analyst',
+      description: 'DataCamp, Databricks, and Snowflake certified. ASU Data Analysis Bootcamp graduate with ASU Business degree.'
     }
   ];
 
@@ -35,17 +40,18 @@ export default function About() {
           {/* Bio */}
           <div className="space-y-6 text-center md:text-left animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Hi! I'm Nathaniel, a passionate full-stack developer with a love for creating elegant solutions to complex problems. 
-              With expertise in modern web technologies, I specialize in building responsive, user-friendly applications that make a difference.
+              I'm an <strong>Equity Investment Manager</strong> and <strong>AI Red Team Specialist</strong> managing $6M+ in investment funds
+              while red teaming frontier AI models for logical reasoning and financial robustness. My work bridges quantitative finance,
+              machine learning, and data science to drive actionable insights.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              My journey in web development has been driven by curiosity and a commitment to continuous learning. 
-              I believe in writing clean, maintainable code and creating experiences that users love.
+              <strong>Certified Data Analyst</strong> by DataCamp, Databricks, and Snowflake. ASU Data Analysis Bootcamp graduate with
+              a Bachelor's Degree from ASU's W.P. Carey School of Business.
             </p>
           </div>
 
           {/* Highlights Grid */}
-          <div className="grid md:grid-cols-3 gap-6 pt-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
             {highlights.map((highlight, index) => (
               <Card
                 key={highlight.title}

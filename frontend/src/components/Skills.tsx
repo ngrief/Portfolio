@@ -4,20 +4,28 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Frontend',
-      skills: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'Next.js', 'Vue.js']
+      title: 'AI & Machine Learning',
+      skills: ['AI Red Teaming', 'TensorFlow', 'Scikit-learn', 'Deep Learning', 'Model Evaluation', 'Data Labeling']
     },
     {
-      title: 'Backend',
-      skills: ['Node.js', 'Express', 'Python', 'REST APIs', 'GraphQL', 'Motoko']
+      title: 'Finance & Quantitative',
+      skills: ['Portfolio Management', 'Derivatives', 'Hedging', 'Risk Modeling', 'Quantitative Trading', 'Asset Management']
     },
     {
-      title: 'Database',
-      skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Firebase']
+      title: 'Programming & Data',
+      skills: ['Python', 'SQL', 'JavaScript', 'Pandas', 'NumPy', 'ETL Pipelines']
     },
     {
-      title: 'Tools & Others',
-      skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Jest', 'Webpack', 'Figma', 'Agile']
+      title: 'Visualization & BI',
+      skills: ['Tableau', 'Plotly', 'D3.js', 'Matplotlib', 'Seaborn', 'Chart.js']
+    },
+    {
+      title: 'Databases',
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'SQLAlchemy']
+    },
+    {
+      title: 'Certifications',
+      skills: ['DataCamp Certified', 'Databricks Certified', 'Snowflake Certified', 'ASU Bootcamp Graduate']
     }
   ];
 
@@ -32,12 +40,12 @@ export default function Skills() {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive toolkit of technologies and frameworks I use to bring ideas to life
+              Expertise spanning AI red teaming, quantitative finance, data science, and business intelligence
             </p>
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, categoryIndex) => (
               <Card
                 key={category.title}
