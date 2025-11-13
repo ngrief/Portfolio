@@ -22,7 +22,7 @@ const visualizations: Visualization[] = [
     title: 'Election Analysis',
     description: 'Interactive visualization analyzing voting patterns by political party across different demographics and regions.',
     image: getVisualizationImage('VotesbyParty.png'),
-    github: 'https://github.com/ntrief/election-analysis',
+    github: 'https://github.com/ngrief/Election',
     tags: ['Python', 'Matplotlib', 'Political Data']
   },
   {
@@ -30,15 +30,16 @@ const visualizations: Visualization[] = [
     title: 'Microbial Diversity Dashboard',
     description: 'Comprehensive dashboard exploring microbial diversity through OTU samples and taxonomic analysis.',
     image: getVisualizationImage('Bio.png'),
-    github: 'https://github.com/ntrief/microbial-diversity',
-    tags: ['R', 'Bioinformatics', 'Data Science']
+    github: 'https://github.com/ngrief/belly-button-challenge',
+    demo: 'https://ngrief.github.io/belly-button-challenge/',
+    tags: ['JavaScript', 'D3.js', 'Bioinformatics']
   },
   {
     id: 'wildfire-seasonality',
     title: 'California Wildfire Seasonality Analysis',
     description: 'Time-series analysis revealing seasonal patterns in California wildfire occurrences throughout the year.',
     image: getVisualizationImage('seasonality.png'),
-    github: 'https://github.com/ntrief/wildfire-analysis',
+    github: 'https://github.com/ngrief/FireAnalyst',
     tags: ['Python', 'Time Series', 'Climate Data']
   },
   {
@@ -46,7 +47,8 @@ const visualizations: Visualization[] = [
     title: 'NYC Citi Bike Tableau Dashboard',
     description: 'Interactive Tableau dashboard analyzing NYC Citi Bike usage patterns, trip durations, and user demographics.',
     image: getVisualizationImage('Tab.png'),
-    demo: 'https://public.tableau.com/app/profile/ntrief/viz/CitiBikeAnalysis',
+    github: 'https://github.com/ngrief/CitiBike',
+    demo: 'https://public.tableau.com/views/BikeDataProject_17394900320310/Story1',
     tags: ['Tableau', 'Transportation', 'NYC Data']
   },
   {
@@ -54,7 +56,7 @@ const visualizations: Visualization[] = [
     title: 'NYC Uber Analytics Dashboard',
     description: 'Comprehensive analytics dashboard examining NYC Uber ride patterns, surge pricing, and geographic distribution.',
     image: getVisualizationImage('Uber dash.png'),
-    github: 'https://github.com/ntrief/uber-analytics',
+    github: '',
     tags: ['Tableau', 'Geospatial', 'Transportation']
   }
 ];
