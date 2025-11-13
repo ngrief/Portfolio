@@ -31,20 +31,18 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send form data to FormSubmit which forwards to AT&T SMS gateway
-      const response = await fetch('https://formsubmit.co/4802356831@txt.att.net', {
+      // Create FormData object for submission
+      const formDataObj = new FormData();
+      formDataObj.append('name', formData.name);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('message', formData.message);
+      formDataObj.append('_subject', `Portfolio Contact from ${formData.name}`);
+      formDataObj.append('_captcha', 'false');
+
+      // Send to email using FormSubmit
+      const response = await fetch('https://formsubmit.co/ntrief@gmail.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          _subject: `Portfolio Contact: ${formData.name}`,
-          _template: 'box'
-        })
+        body: formDataObj
       });
 
       if (response.ok) {
