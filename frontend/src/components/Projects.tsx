@@ -5,12 +5,45 @@ import { Badge } from '@/components/ui/badge';
 import { useBackendData } from '@/hooks/useQueries';
 
 export default function Projects() {
-  const { projects, isLoadingProjects } = useBackendData();
+  const { projects: backendProjects, isLoadingProjects } = useBackendData();
+
+  // Fallback projects data
+  const fallbackProjects = [
+    {
+      id: '1',
+      title: 'Portfolio Website',
+      description: 'A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a clean design.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      github: 'https://github.com/ngrief/Portfolio',
+      demo: '',
+      image: ''
+    },
+    {
+      id: '2',
+      title: 'Data Visualization Dashboard',
+      description: 'Interactive data visualization dashboard showcasing various analytics and insights with modern charting libraries.',
+      technologies: ['React', 'D3.js', 'Chart.js', 'Python'],
+      github: '',
+      demo: '',
+      image: ''
+    },
+    {
+      id: '3',
+      title: 'Full Stack Application',
+      description: 'A full-stack web application demonstrating modern development practices and cloud deployment.',
+      technologies: ['Node.js', 'Express', 'MongoDB', 'React'],
+      github: '',
+      demo: '',
+      image: ''
+    }
+  ];
+
+  const projects = backendProjects.length > 0 ? backendProjects : fallbackProjects;
 
   const projectImages = [
-    '/assets/generated/project-demo-1.dim_800x600.jpg',
-    '/assets/generated/project-demo-2.dim_400x800.jpg',
-    '/assets/generated/project-demo-3.dim_800x600.jpg'
+    `${import.meta.env.BASE_URL}assets/generated/project-demo-1.dim_800x600.jpg`,
+    `${import.meta.env.BASE_URL}assets/generated/project-demo-2.dim_400x800.jpg`,
+    `${import.meta.env.BASE_URL}assets/generated/project-demo-3.dim_800x600.jpg`
   ];
 
   if (isLoadingProjects) {
@@ -55,6 +88,9 @@ export default function Projects() {
                     src={projectImages[index % projectImages.length]}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = `https://placehold.co/800x600/1a1a1a/white?text=${encodeURIComponent(project.title)}`;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>

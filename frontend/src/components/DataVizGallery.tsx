@@ -14,12 +14,14 @@ interface Visualization {
   tags: string[];
 }
 
+const getVisualizationImage = (filename: string) => `${import.meta.env.BASE_URL}assets/${filename}`;
+
 const visualizations: Visualization[] = [
   {
     id: 'election-analysis',
     title: 'Election Analysis',
     description: 'Interactive visualization analyzing voting patterns by political party across different demographics and regions.',
-    image: '/assets/VotesbyParty.png',
+    image: getVisualizationImage('VotesbyParty.png'),
     github: 'https://github.com/ntrief/election-analysis',
     tags: ['Python', 'Matplotlib', 'Political Data']
   },
@@ -27,7 +29,7 @@ const visualizations: Visualization[] = [
     id: 'microbial-diversity',
     title: 'Microbial Diversity Dashboard',
     description: 'Comprehensive dashboard exploring microbial diversity through OTU samples and taxonomic analysis.',
-    image: '/assets/Bio.png',
+    image: getVisualizationImage('Bio.png'),
     github: 'https://github.com/ntrief/microbial-diversity',
     tags: ['R', 'Bioinformatics', 'Data Science']
   },
@@ -35,7 +37,7 @@ const visualizations: Visualization[] = [
     id: 'wildfire-seasonality',
     title: 'California Wildfire Seasonality Analysis',
     description: 'Time-series analysis revealing seasonal patterns in California wildfire occurrences throughout the year.',
-    image: '/assets/seasonality.png',
+    image: getVisualizationImage('seasonality.png'),
     github: 'https://github.com/ntrief/wildfire-analysis',
     tags: ['Python', 'Time Series', 'Climate Data']
   },
@@ -43,7 +45,7 @@ const visualizations: Visualization[] = [
     id: 'citibike-tableau',
     title: 'NYC Citi Bike Tableau Dashboard',
     description: 'Interactive Tableau dashboard analyzing NYC Citi Bike usage patterns, trip durations, and user demographics.',
-    image: '/assets/Tab.png',
+    image: getVisualizationImage('Tab.png'),
     demo: 'https://public.tableau.com/app/profile/ntrief/viz/CitiBikeAnalysis',
     tags: ['Tableau', 'Transportation', 'NYC Data']
   },
@@ -51,7 +53,7 @@ const visualizations: Visualization[] = [
     id: 'uber-dashboard',
     title: 'NYC Uber Analytics Dashboard',
     description: 'Comprehensive analytics dashboard examining NYC Uber ride patterns, surge pricing, and geographic distribution.',
-    image: '/assets/Uber dash.png',
+    image: getVisualizationImage('Uber dash.png'),
     github: 'https://github.com/ntrief/uber-analytics',
     tags: ['Tableau', 'Geospatial', 'Transportation']
   }
@@ -86,6 +88,9 @@ export default function DataVizGallery() {
                   src={viz.image}
                   alt={viz.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = `https://placehold.co/1200x675/1a1a1a/white?text=${encodeURIComponent(viz.title)}`;
+                  }}
                 />
               </div>
               
