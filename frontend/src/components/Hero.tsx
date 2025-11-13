@@ -103,7 +103,11 @@ export default function Hero() {
                 className="rounded-full hover:scale-110 transition-transform duration-200"
                 asChild
               >
-                <a href={url} target="_blank" rel="noopener noreferrer" aria-label={platform}>
+                <a
+                  href={url}
+                  {...(url.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+                  aria-label={platform}
+                >
                   {getSocialIcon(platform)}
                 </a>
               </Button>
