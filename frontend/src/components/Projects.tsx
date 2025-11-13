@@ -11,29 +11,56 @@ export default function Projects() {
   const fallbackProjects = [
     {
       id: '1',
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a clean design.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      github: 'https://github.com/ngrief/Portfolio',
+      title: 'Crowdfunding ETL Pipeline',
+      description: 'Comprehensive ETL (Extract, Transform, Load) pipeline for processing and analyzing crowdfunding campaign data with robust database design. Implemented data validation, cleaning procedures, and efficient SQL queries for complex analytical questions.',
+      technologies: ['Python', 'Pandas', 'PostgreSQL', 'ETL', 'Database Design'],
+      github: 'https://github.com/ngrief/Crowdfunding_ETL',
       demo: '',
       image: ''
     },
     {
       id: '2',
-      title: 'Data Visualization Dashboard',
-      description: 'Interactive data visualization dashboard showcasing various analytics and insights with modern charting libraries.',
-      technologies: ['React', 'D3.js', 'Chart.js', 'Python'],
-      github: '',
-      demo: '',
+      title: 'Population & Migration Data Platform',
+      description: 'Full-stack data visualization platform exploring global population dynamics and migration patterns. Features interactive choropleth maps, dynamic charts, and MongoDB database integration for efficient data querying.',
+      technologies: ['JavaScript', 'Chart.js', 'Leaflet.js', 'MongoDB', 'HTML/CSS'],
+      github: 'https://github.com/ngrief/data-class-project-3',
+      demo: 'https://ngrief.github.io/data-class-project-3/index.html',
       image: ''
     },
     {
       id: '3',
-      title: 'Full Stack Application',
-      description: 'A full-stack web application demonstrating modern development practices and cloud deployment.',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'React'],
-      github: '',
+      title: 'Airbnb Market Analysis',
+      description: 'Collaborative project analyzing Airbnb listing data to uncover pricing strategies, host behaviors, and market dynamics. Quantified impact of premium amenities on pricing and identified seasonal patterns using statistical analysis.',
+      technologies: ['Python', 'Pandas', 'Matplotlib', 'SciPy', 'Statistical Analysis'],
+      github: 'https://github.com/ngrief/data-class-project1',
       demo: '',
+      image: ''
+    },
+    {
+      id: '4',
+      title: 'Microbial Diversity Dashboard',
+      description: 'Interactive web application exploring biodiversity in human belly button microbiomes using D3.js. Features dynamic bar charts, interactive bubble charts, and real-time data updates based on user selection.',
+      technologies: ['JavaScript', 'D3.js', 'HTML5', 'CSS3', 'JSON'],
+      github: 'https://github.com/ngrief/belly-button-challenge',
+      demo: 'https://ngrief.github.io/belly-button-challenge/',
+      image: ''
+    },
+    {
+      id: '5',
+      title: 'Employee Attrition Neural Network',
+      description: 'Deep neural network to predict employee attrition using HR metrics. 3-layer architecture with 128, 64, and 32 neurons, achieving 87% accuracy. Enables proactive retention strategies and reduces turnover costs.',
+      technologies: ['Python', 'TensorFlow', 'Keras', 'Deep Learning', 'Neural Networks'],
+      github: 'https://github.com/ngrief/deep-learning-challenge',
+      demo: '',
+      image: ''
+    },
+    {
+      id: '6',
+      title: 'NYC Citi Bike Analytics Dashboard',
+      description: 'Interactive Tableau story analyzing NYC bike-sharing patterns with 1M+ trip records. Features geographic heatmaps, time-series analysis, user demographic breakdowns, and operational insights for capacity planning.',
+      technologies: ['Tableau', 'Python', 'Pandas', 'Data Visualization', 'BI'],
+      github: 'https://github.com/ngrief/CitiBike',
+      demo: 'https://public.tableau.com/views/BikeDataProject_17394900320310/Story1',
       image: ''
     }
   ];

@@ -10,7 +10,15 @@ import { toast } from 'sonner';
 import { useBackendData } from '@/hooks/useQueries';
 
 export default function Contact() {
-  const { socialLinks } = useBackendData();
+  const { socialLinks: backendSocialLinks } = useBackendData();
+
+  // Fallback social links
+  const defaultSocialLinks = [
+    ['linkedin', 'https://www.linkedin.com/in/nathaniel-trief-492a70b/'],
+    ['github', 'https://github.com/ngrief']
+  ];
+
+  const socialLinks = backendSocialLinks.length > 0 ? backendSocialLinks : defaultSocialLinks;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,14 +58,8 @@ export default function Contact() {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Phoenix/Scottsdale, AZ',
       href: null
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
     }
   ];
 
@@ -86,7 +88,7 @@ export default function Contact() {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or just want to chat? Feel free to reach out!
+              Open to remote or in-person opportunities in the Phoenix/Scottsdale area. Let's connect!
             </p>
           </div>
 

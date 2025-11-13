@@ -6,7 +6,16 @@ import { Badge } from '@/components/ui/badge';
 import { useBackendData } from '@/hooks/useQueries';
 
 export default function Hero() {
-  const { socialLinks } = useBackendData();
+  const { socialLinks: backendSocialLinks } = useBackendData();
+
+  // Fallback social links
+  const defaultSocialLinks = [
+    ['linkedin', 'https://www.linkedin.com/in/nathaniel-trief-492a70b/'],
+    ['github', 'https://github.com/ngrief'],
+    ['email', 'mailto:ntrief@gmail.com']
+  ];
+
+  const socialLinks = backendSocialLinks.length > 0 ? backendSocialLinks : defaultSocialLinks;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -66,21 +75,21 @@ export default function Hero() {
             </h1>
             <div className="flex flex-wrap justify-center gap-2">
               <Badge variant="secondary" className="text-sm md:text-base px-4 py-1">
-                Full Stack Developer
+                Equity Investment Manager
               </Badge>
               <Badge variant="outline" className="text-sm md:text-base px-4 py-1">
-                React Specialist
+                AI Red Team Specialist
               </Badge>
               <Badge variant="outline" className="text-sm md:text-base px-4 py-1">
-                UI/UX Enthusiast
+                Data & Quantitative Analyst
               </Badge>
             </div>
           </div>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Crafting beautiful, performant web experiences with modern technologies.
-            Passionate about clean code and user-centric design.
+            Transforming complex datasets into actionable insights. Specialized in AI red teaming,
+            quantitative finance, and data-driven decision making.
           </p>
 
           {/* Social Links */}
