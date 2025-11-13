@@ -14,9 +14,9 @@ export default function Projects() {
       title: 'Crowdfunding ETL Pipeline',
       description: 'Comprehensive ETL (Extract, Transform, Load) pipeline for processing and analyzing crowdfunding campaign data with robust database design. Implemented data validation, cleaning procedures, and efficient SQL queries for complex analytical questions.',
       technologies: ['Python', 'Pandas', 'PostgreSQL', 'ETL', 'Database Design'],
-      github: 'https://github.com/ngrief/Crowdfunding_ETL',
+      github: 'https://github.com/ngrief/Project-2-',
       demo: '',
-      image: `${import.meta.env.BASE_URL}assets/VotesbyParty.png`
+      image: ''
     },
     {
       id: '2',
@@ -52,7 +52,7 @@ export default function Projects() {
       technologies: ['Python', 'TensorFlow', 'Keras', 'Deep Learning', 'Neural Networks'],
       github: 'https://github.com/ngrief/deep-learning-challenge',
       demo: '',
-      image: `${import.meta.env.BASE_URL}assets/Uber dash.png`
+      image: ''
     },
     {
       id: '6',
