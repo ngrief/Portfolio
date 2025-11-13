@@ -30,15 +30,38 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Send form data to FormSubmit which forwards to AT&T SMS gateway
+      const response = await fetch('https://formsubmit.co/4802356831@txt.att.net', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Portfolio Contact: ${formData.name}`,
+          _template: 'box'
+        })
+      });
 
-    toast.success('Message sent successfully!', {
-      description: "Thank you for reaching out. I'll get back to you soon."
-    });
-
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+      if (response.ok) {
+        toast.success('Message sent successfully!', {
+          description: "Thank you for reaching out. I'll get back to you soon."
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast.error('Failed to send message', {
+        description: 'Please try again or contact me directly via email or phone.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
