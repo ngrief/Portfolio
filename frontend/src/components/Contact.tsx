@@ -31,21 +31,22 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Create FormData object for submission
       const formDataObj = new FormData();
       formDataObj.append('name', formData.name);
       formDataObj.append('email', formData.email);
       formDataObj.append('message', formData.message);
-      formDataObj.append('_subject', `Portfolio Contact from ${formData.name}`);
-      formDataObj.append('_captcha', 'false');
 
-      // Send to email using FormSubmit
       const response = await fetch('https://formsubmit.co/ntrief@gmail.com', {
         method: 'POST',
-        body: formDataObj
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         toast.success('Message sent successfully!', {
           description: "Thank you for reaching out. I'll get back to you soon."
         });
@@ -54,6 +55,7 @@ export default function Contact() {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       toast.error('Failed to send message', {
         description: 'Please try again or contact me directly via email or phone.'
       });
