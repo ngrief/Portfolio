@@ -18,6 +18,14 @@ const getVisualizationImage = (filename: string) => `${import.meta.env.BASE_URL}
 
 const visualizations: Visualization[] = [
   {
+    id: 'alabama-medical-charges',
+    title: 'Alabama Medical-Charges Dashboard',
+    description: 'Comprehensive healthcare analytics dashboard visualizing medical charge flows across payers, procedures, and cities. Features Sankey diagrams, treemaps, and heatmaps for multi-dimensional analysis.',
+    image: getVisualizationImage('Alabama dash.png'),
+    github: '',
+    tags: ['Tableau', 'Healthcare', 'Data Analytics']
+  },
+  {
     id: 'election-analysis',
     title: 'Election Analysis',
     description: 'Interactive visualization analyzing voting patterns by political party across different demographics and regions.',
@@ -44,8 +52,8 @@ const visualizations: Visualization[] = [
   },
   {
     id: 'citibike-tableau',
-    title: 'NYC Citi Bike Tableau Dashboard',
-    description: 'Interactive Tableau dashboard analyzing NYC Citi Bike usage patterns, trip durations, and user demographics.',
+    title: 'Bike Data Project',
+    description: 'Multi-sheet Tableau story analyzing bike share data including total rides, trip duration comparisons between casual and member users, electric vs classic bike usage patterns, and detailed demographic breakdowns.',
     image: getVisualizationImage('Tab.png'),
     github: 'https://github.com/ngrief/CitiBike',
     demo: 'https://public.tableau.com/views/BikeDataProject_17394900320310/Story1',
@@ -53,8 +61,8 @@ const visualizations: Visualization[] = [
   },
   {
     id: 'uber-dashboard',
-    title: 'NYC Uber Analytics Dashboard',
-    description: 'Comprehensive analytics dashboard examining NYC Uber ride patterns, surge pricing, and geographic distribution.',
+    title: 'NYC Uber Dashboard',
+    description: 'Interactive geospatial analytics dashboard featuring map visualizations of NYC Uber pickups, fare distribution by product type, and surge pricing probability analysis by hour of day across 25,000+ rides.',
     image: getVisualizationImage('Uber dash.png'),
     github: '',
     tags: ['Tableau', 'Geospatial', 'Transportation']
