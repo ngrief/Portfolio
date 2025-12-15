@@ -161,10 +161,16 @@ export default function DataVizGallery() {
 
         {/* Lightbox Dialog */}
         <Dialog open={!!selectedViz} onOpenChange={() => setSelectedViz(null)}>
-          <DialogContent className="max-w-5xl p-0 overflow-hidden">
+          <DialogContent
+            className="max-w-5xl p-0 overflow-hidden"
+            onOverlayClick={() => setSelectedViz(null)}
+          >
             {selectedViz && (
               <div className="relative">
-                <DialogClose className="absolute top-4 right-4 z-10 rounded-full bg-background/80 backdrop-blur-sm p-2 hover:bg-background transition-colors">
+                <DialogClose
+                  className="absolute top-4 right-4 z-10 rounded-full bg-background/80 backdrop-blur-sm p-2 hover:bg-background transition-colors"
+                  onClick={() => setSelectedViz(null)}
+                >
                   <X className="h-5 w-5" />
                 </DialogClose>
                 

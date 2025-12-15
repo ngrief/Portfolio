@@ -30,10 +30,10 @@ const DialogOverlay = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTML
 )
 DialogOverlay.displayName = "DialogOverlay"
 
-const DialogContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className = '', children, ...props }, ref) => (
+const DialogContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { onOverlayClick?: () => void }>(
+  ({ className = '', children, onOverlayClick, ...props }, ref) => (
     <DialogPortal>
-      <DialogOverlay />
+      <DialogOverlay onClick={onOverlayClick} />
       <div
         ref={ref}
         className={`fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg sm:rounded-lg ${className}`}
