@@ -82,12 +82,12 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="font-semibold">Get In Touch</h4>
               <div className="space-y-2 text-muted-foreground">
-                <p>San Francisco, CA</p>
+                <p>Scottsdale, AZ</p>
                 <a href="mailto:ntrief@gmail.com" className="block hover:text-primary transition-colors">
                   ntrief@gmail.com
                 </a>
-                <a href="tel:+15551234567" className="block hover:text-primary transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+14802356831" className="block hover:text-primary transition-colors">
+                  1-480-235-6831
                 </a>
               </div>
             </div>
