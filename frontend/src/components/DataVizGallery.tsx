@@ -164,8 +164,9 @@ export default function DataVizGallery() {
           <DialogContent className="max-w-5xl p-0 overflow-hidden">
             {selectedViz && (
               <div className="relative">
-                <DialogClose className="absolute top-4 right-4 z-10 rounded-full bg-background/80 backdrop-blur-sm p-2 hover:bg-background transition-colors">
-                  <X className="h-5 w-5" />
+                <DialogClose className="absolute top-4 right-4 z-[60] rounded-full bg-background/80 backdrop-blur-sm p-2 hover:bg-background transition-colors cursor-pointer">
+                  <X className="h-6 w-6" />
+                  <span className="sr-only">Close</span>
                 </DialogClose>
                 
                 <div className="bg-muted">
