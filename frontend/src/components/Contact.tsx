@@ -85,14 +85,14 @@ export default function Contact() {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Scottsdale, AZ',
       href: null
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '(480) 235-6831',
+      href: 'tel:+14802356831'
     }
   ];
 
@@ -121,7 +121,7 @@ export default function Contact() {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Open to remote or in-person opportunities in San Francisco, CA. Let's connect!
+              Open to remote or in-person opportunities in Scottsdale, AZ. Let's connect!
             </p>
           </div>
 
