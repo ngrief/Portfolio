@@ -48,7 +48,7 @@ export default function CuratedProjects() {
                       asChild
                     >
                       <a
-                        href="https://github.com/ngrief/Curated_List/deployments/github-pages"
+                        href="https://ngrief.github.io/Curated_List/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
