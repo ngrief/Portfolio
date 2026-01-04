@@ -16,7 +16,7 @@ export default function Projects() {
       technologies: ['Python', 'Pandas', 'PostgreSQL', 'ETL', 'Database Design'],
       github: 'https://github.com/ngrief/Project-2-',
       demo: '',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/crowdfunding-erd.png`
     },
     {
       id: '2',
@@ -52,7 +52,7 @@ export default function Projects() {
       technologies: ['Python', 'TensorFlow', 'Keras', 'Deep Learning', 'Neural Networks'],
       github: 'https://github.com/ngrief/deep-learning-challenge',
       demo: '',
-      image: ''
+      image: `${import.meta.env.BASE_URL}assets/neural-network.png`
     },
     {
       id: '6',
