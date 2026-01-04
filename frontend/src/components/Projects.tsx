@@ -70,7 +70,7 @@ export default function Projects() {
       technologies: ['Python', 'Machine Learning', 'Scikit-learn', 'Pandas', 'Data Analytics'],
       github: 'https://github.com/ngrief/Group-5-Project-4',
       demo: '',
-      image: `${import.meta.env.BASE_URL}assets/student-risk.png`
+      image: `${import.meta.env.BASE_URL}assets/top10_features.png`
     }
   ];
 
