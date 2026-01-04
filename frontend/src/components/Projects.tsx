@@ -105,11 +105,11 @@ export default function Projects() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {projects.map((project, index) => (
               <Card
                 key={project.id}
-                className="group overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 flex flex-col"
+                className="group overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 flex flex-col w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 style={{ animationDelay: `${index * 150}ms`, animationDuration: '700ms' }}
               >
                 {/* Project Image */}
