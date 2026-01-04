@@ -62,6 +62,15 @@ export default function Projects() {
       github: 'https://github.com/ngrief/CitiBike',
       demo: 'https://public.tableau.com/views/BikeDataProject_17394900320310/Story1',
       image: `${import.meta.env.BASE_URL}assets/Tab.png`
+    },
+    {
+      id: '7',
+      title: 'Student At Risk Detection System',
+      description: 'Machine learning system to identify students at risk of academic failure using predictive analytics. Leverages historical academic data and behavioral indicators to enable early intervention strategies for improved student outcomes.',
+      technologies: ['Python', 'Machine Learning', 'Scikit-learn', 'Pandas', 'Data Analytics'],
+      github: 'https://github.com/ngrief/Group-5-Project-4',
+      demo: '',
+      image: `${import.meta.env.BASE_URL}assets/student-risk.png`
     }
   ];
 
