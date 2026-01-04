@@ -5,6 +5,7 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import DataVizGallery from '@/components/DataVizGallery';
+import CuratedProjects from '@/components/CuratedProjects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -13,7 +14,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'gallery', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'gallery', 'curated', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -41,6 +42,7 @@ export default function Portfolio() {
         <Skills />
         <Projects />
         <DataVizGallery />
+        <CuratedProjects />
         <Contact />
       </main>
       <Footer />

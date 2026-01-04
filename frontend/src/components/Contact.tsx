@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiX, SiInstagram, SiFacebook } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -15,7 +15,9 @@ export default function Contact() {
   // Fallback social links
   const defaultSocialLinks = [
     ['linkedin', 'https://www.linkedin.com/in/nathaniel-trief-492a70b/'],
-    ['github', 'https://github.com/ngrief']
+    ['github', 'https://github.com/ngrief'],
+    ['instagram', 'https://www.instagram.com/triefofmusic/'],
+    ['facebook', 'https://www.facebook.com/wildnateguitar']
   ];
 
   const socialLinks = backendSocialLinks.length > 0 ? backendSocialLinks : defaultSocialLinks;
@@ -104,6 +106,10 @@ export default function Contact() {
         return <SiLinkedin className="h-5 w-5" />;
       case 'twitter':
         return <SiX className="h-5 w-5" />;
+      case 'instagram':
+        return <SiInstagram className="h-5 w-5" />;
+      case 'facebook':
+        return <SiFacebook className="h-5 w-5" />;
       default:
         return null;
     }

@@ -1,5 +1,5 @@
 import { ArrowDown } from 'lucide-react';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiX, SiInstagram, SiFacebook } from 'react-icons/si';
 import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -12,6 +12,8 @@ export default function Hero() {
   const defaultSocialLinks = [
     ['linkedin', 'https://www.linkedin.com/in/nathaniel-trief-492a70b/'],
     ['github', 'https://github.com/ngrief'],
+    ['instagram', 'https://www.instagram.com/triefofmusic/'],
+    ['facebook', 'https://www.facebook.com/wildnateguitar'],
     ['email', 'mailto:ntrief@gmail.com']
   ];
 
@@ -39,6 +41,10 @@ export default function Hero() {
         return <SiLinkedin className="h-5 w-5" />;
       case 'twitter':
         return <SiX className="h-5 w-5" />;
+      case 'instagram':
+        return <SiInstagram className="h-5 w-5" />;
+      case 'facebook':
+        return <SiFacebook className="h-5 w-5" />;
       case 'email':
         return <Mail className="h-5 w-5" />;
       default:
